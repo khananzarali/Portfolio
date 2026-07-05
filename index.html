@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anzar Ali Khan | Internet Home</title>
+    <meta name="description" content="Anzar Ali Khan's Internet Home | Software Engineer, QA Automation & Full Stack Developer.">
+
+    <meta property="og:title" content="Anzar Ali Khan | Internet Home">
+    <meta property="og:description" content="Software Engineer, QA Automation & Full Stack Developer.">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Anzar Ali Khan | Internet Home">
+    <meta name="twitter:description" content="Software Engineer, QA Automation & Full Stack Developer.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <style>
+:root {
+    --black: #000000;
+    --gray-950: #0a0a0a;
+    --gray-900: #111111;
+    --gray-850: #161616;
+    --gray-800: #1a1a1a;
+    --gray-700: #262626;
+    --gray-600: #404040;
+    --gray-500: #525252;
+    --gray-400: #737373;
+    --gray-300: #a3a3a3;
+    --gray-200: #d4d4d4;
+    --gray-100: #e5e5e5;
+    --gray-50: #f5f5f5;
+    --white: #fafafa;
+
+    --bg-primary: var(--black);
+    --bg-elevated: rgba(255, 255, 255, 0.04);
+    --bg-hover: rgba(255, 255, 255, 0.08);
+
+    --text-primary: var(--white);
+    --text-secondary: var(--gray-400);
+    --text-muted: var(--gray-600);
+
+    --border-subtle: rgba(255, 255, 255, 0.06);
+    --border-medium: rgba(255, 255, 255, 0.1);
+
+    --cyan: #00f2ff;
+
+    --container-width: 720px;
+    --section-gap: 3rem;
+    --content-padding: 2rem;
+
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+::selection { background: var(--white); color: var(--black); }
+
+html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    background: var(--bg-primary);
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+html::-webkit-scrollbar { display: none; }
+
+body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: var(--cyan);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+a:hover { opacity: 0.8; }
+
+.vignette {
+    position: fixed; inset: 0; z-index: 2; pointer-events: none;
+    background: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 0%, rgba(0,0,0,0.5) 100%);
+}
+
+.content-wrapper {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 4rem var(--content-padding) 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.hero { margin-bottom: var(--section-gap); text-align: left; }
+
+.hero-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+}
+
+.hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.5rem 1rem; background: var(--bg-elevated);
+    border: 1px solid var(--border-subtle); border-radius: 100px;
+    font-size: 0.75rem; font-weight: 500; color: var(--gray-300);
+    margin-bottom: 1.25rem; letter-spacing: 0.02em; text-transform: uppercase;
+    opacity: 0; transform: translateY(20px);
+    animation: fadeUp 0.8s var(--ease-out-expo) 0.2s forwards;
+}
+
+.status-dot {
+    width: 6px; height: 6px; background: #22c55e; border-radius: 50%;
+    animation: pulse 10s ease-in-out infinite;
+}
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.hero-title {
+    font-size: clamp(3rem, 10vw, 5rem); font-weight: 700;
+    letter-spacing: -0.04em; line-height: 1; margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+.title-line {
+    display: inline-block; opacity: 0; transform: translateY(40px);
+    animation: fadeUp 1s var(--ease-out-expo) 0.3s forwards;
+}
+.title-dot { color: var(--cyan); }
+
+.hero-subtitle {
+    font-size: 1.25rem; font-weight: 400; color: var(--gray-300);
+    margin-bottom: 0.5rem; opacity: 0; transform: translateY(20px);
+    animation: fadeUp 0.8s var(--ease-out-expo) 0.5s forwards;
+}
+.hero-tagline {
+    font-family: "JetBrains Mono", monospace; font-size: 0.875rem;
+    color: var(--gray-400); opacity: 0; transform: translateY(20px);
+    animation: fadeUp 0.8s var(--ease-out-expo) 0.6s forwards;
+}
+
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-ghost {
+    display: flex; align-items: flex-end; margin-top: 10px;
+    width: 68px; height: 56px; position: relative;
+}
+.pixel-ghost {
+    --ghost-scale: 0.2;
+    font-family: monospace; font-size: 20px;
+    transform: scale(var(--ghost-scale)); transform-origin: top left;
+    position: absolute; top: 0; left: 0; line-height: 1; letter-spacing: 0;
+    color: var(--white); opacity: 0.9;
+    -webkit-font-smoothing: none; text-rendering: pixelated;
+    animation: ethereal-drift 6s ease-in-out infinite;
+    user-select: none; text-shadow: 0 0 8px rgba(255,255,255,0.4);
+    width: max-content; margin: 0;
+}
+@keyframes ethereal-drift {
+    0%, 100% { transform: scale(var(--ghost-scale)) translate(0) rotate(0); opacity: 0.9; }
+    33% { transform: scale(var(--ghost-scale)) translate(1px, -3px) rotate(1.5deg); opacity: 0.6; }
+    66% { transform: scale(var(--ghost-scale)) translate(-1.5px, 1px) rotate(-1deg); opacity: 0.8; }
+}
+
+.section { margin-bottom: var(--section-gap); }
+
+.section-header {
+    display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;
+    opacity: 0; transform: translateY(20px);
+    transition: all 0.8s var(--ease-out-expo);
+}
+.section-header.visible { opacity: 1; transform: translateY(0); }
+
+.section-number {
+    font-family: "JetBrains Mono", monospace; font-size: 0.75rem;
+    font-weight: 500; color: var(--gray-500); letter-spacing: 0.1em;
+}
+.section-title {
+    font-size: 0.875rem; font-weight: 600; color: var(--gray-300);
+    text-transform: uppercase; letter-spacing: 0.15em;
+}
+.section-line {
+    flex: 1; height: 1px;
+    background: linear-gradient(90deg, var(--border-medium) 0%, transparent 100%);
+}
+
+.bento-grid {
+    display: grid; grid-template-columns: repeat(12, 1fr); gap: 0.75rem;
+}
+
+.tile-wrapper {
+    position: relative; display: flex; align-items: stretch;
+    opacity: 0; transform: translateY(30px);
+    transition: all 0.6s var(--ease-out-expo);
+}
+.tile-wrapper.visible { opacity: 1; transform: translateY(0); }
+
+.tile-wrapper:nth-child(1) { transition-delay: 0.05s; }
+.tile-wrapper:nth-child(2) { transition-delay: 0.1s; }
+.tile-wrapper:nth-child(3) { transition-delay: 0.15s; }
+.tile-wrapper:nth-child(4) { transition-delay: 0.2s; }
+.tile-wrapper:nth-child(5) { transition-delay: 0.25s; }
+.tile-wrapper:nth-child(6) { transition-delay: 0.3s; }
+.tile-wrapper:nth-child(7) { transition-delay: 0.35s; }
+
+.tile {
+    position: relative; display: flex; flex: 1; align-items: center;
+    gap: 0.625rem; padding: 1.25rem 1.5rem; background: var(--bg-elevated);
+    border: 1px solid var(--border-subtle); border-radius: 12px 0 0 12px;
+    text-decoration: none; color: var(--text-primary); overflow: hidden;
+    transition: background-color 0.2s ease;
+}
+.tile:hover { background: var(--bg-hover); }
+
+.tile i {
+    font-size: 1.25rem; width: 1.5rem; text-align: center; flex-shrink: 0;
+    color: var(--gray-500); transition: all 0.2s ease;
+}
+.tile:hover i { color: var(--text-primary); }
+
+.tile span {
+    font-size: 0.9375rem; font-weight: 500; letter-spacing: -0.01em;
+}
+
+.copy-btn {
+    display: flex; align-items: center; justify-content: center;
+    width: 48px; min-width: 48px; background: rgba(10,10,10,0.5);
+    border: 1px solid var(--border-subtle); border-left: none;
+    border-radius: 0 12px 12px 0; color: var(--text-muted);
+    cursor: pointer; transition: all 0.3s var(--ease-out-expo);
+}
+.copy-btn:hover { background: var(--bg-elevated); color: var(--text-primary); }
+.copy-btn:active { transform: scale(0.95); }
+.copy-btn i { font-size: 0.875rem; transition: transform 0.3s var(--ease-out-expo); }
+.copy-btn:hover i { transform: scale(1.1); }
+
+.tile--primary { grid-column: span 6; }
+.tile--xl { grid-column: span 8; }
+.tile--lg, .tile--md { grid-column: span 6; }
+.tile--sm { grid-column: span 4; }
+
+.tile--primary .tile { padding: 1.5rem 1.75rem; min-height: 72px; }
+.tile--primary .tile i { font-size: 1.5rem; width: 1.75rem; }
+.tile--primary .tile span { font-size: 1rem; font-weight: 600; }
+
+.tile--sm .tile { padding: 1rem 1.25rem; }
+.tile--sm .tile i { font-size: 1rem; }
+.tile--sm .tile span { font-size: 0.8125rem; }
+
+.current-list { display: flex; flex-direction: column; gap: 0; }
+
+.current-item {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 1.25rem 0; border-bottom: 1px solid var(--border-subtle);
+    opacity: 0; transform: translateX(-20px);
+    transition: all 0.6s var(--ease-out-expo);
+}
+.current-item.visible { opacity: 1; transform: translateX(0); }
+.current-item:last-child { border-bottom: none; }
+
+.current-bullet {
+    width: 6px; height: 6px; background: var(--text-muted);
+    border-radius: 50%; margin-top: 0.5rem; flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+.current-item:hover .current-bullet { background: var(--text-primary); }
+
+.current-content { flex: 1; }
+.current-title {
+    font-size: 0.9375rem; font-weight: 500; color: var(--text-primary);
+    margin-bottom: 0.25rem; transition: color 0.3s ease;
+}
+.current-item:hover .current-title { color: var(--white); }
+.current-description {
+    font-size: 0.8125rem; color: var(--gray-400); line-height: 1.5;
+}
+
+.current-meta {
+    font-family: "JetBrains Mono", monospace; font-size: 0.6875rem;
+    color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.1em;
+    flex-shrink: 0; margin-top: 0.2rem;
+}
+
+.current-link {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.5rem 1rem; background: var(--bg-elevated);
+    border: 1px solid var(--border-subtle); border-radius: 8px;
+    color: var(--gray-300); text-decoration: none;
+    font-size: 0.75rem; font-weight: 500;
+    transition: all 0.3s var(--ease-out-expo); flex-shrink: 0;
+}
+.current-link:hover {
+    background: var(--bg-hover); border-color: var(--border-medium);
+    color: var(--text-primary); opacity: 1;
+}
+.current-link i { font-size: 0.625rem; transition: transform 0.3s ease; }
+.current-link:hover i { transform: translateX(2px); }
+
+.accordion-container { display: flex; flex-direction: column; gap: 0; }
+
+.accordion-item {
+    background: none; border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    transition: all 0.3s ease;
+}
+.accordion-item:last-child { border-bottom: none; }
+
+.accordion-header {
+    width: 100%; display: flex; align-items: center; gap: 1.25rem;
+    padding: 1.25rem 0; background: none; border: none;
+    cursor: pointer; text-align: left; color: inherit;
+    transition: all 0.3s ease; font-family: inherit;
+}
+.accordion-item:hover { background: rgba(255,255,255,0.012); }
+
+.accordion-logo {
+    width: 46px; height: 46px; background: #080808;
+    border: 1px solid rgba(255,255,255,0.05); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 1.125rem; font-weight: 700;
+    color: var(--gray-400); overflow: hidden;
+}
+.accordion-logo i { color: var(--gray-500); transition: color 0.2s ease; }
+.accordion-item:hover .accordion-logo i { color: var(--gray-300); }
+
+.accordion-info { flex: 1; display: flex; flex-direction: column; gap: 0.125rem; }
+.accordion-title-row { display: flex; align-items: center; gap: 0.625rem; flex-wrap: wrap; }
+.accordion-title { font-size: 0.9375rem; font-weight: 600; color: var(--white); letter-spacing: -0.01em; }
+
+.accordion-links { display: flex; align-items: center; gap: 0.4rem; }
+.accordion-link-icon {
+    font-size: 0.6875rem; color: var(--text-muted); transition: all 0.2s ease;
+    text-decoration: none; opacity: 0.6; display: flex; align-items: center;
+}
+.accordion-link-icon:hover { color: var(--white); opacity: 1; }
+
+.accordion-subtitle { font-size: 0.8125rem; color: var(--gray-400); font-weight: 400; }
+
+.accordion-meta { text-align: right; display: flex; flex-direction: column; gap: 0.125rem; margin-right: 0.5rem; }
+.accordion-date { font-size: 0.8125rem; color: var(--gray-300); font-weight: 500; }
+
+.accordion-chevron-box {
+    width: 32px; height: 32px; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.08);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s var(--ease-out-expo); background: rgba(255,255,255,0.02);
+    flex-shrink: 0;
+}
+.accordion-icon {
+    font-size: 0.625rem; color: var(--text-muted);
+    transition: transform 0.4s var(--ease-out-expo);
+}
+.accordion-icon.rotated { transform: rotate(180deg); color: var(--white); }
+
+.accordion-content { transition: height 0.4s var(--ease-out-expo); }
+
+.accordion-inner {
+    padding: 0 0 1.5rem 4.125rem; font-size: 0.875rem;
+    line-height: 1.6; color: var(--gray-300);
+}
+.accordion-bullet-point {
+    display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.5rem;
+}
+.accordion-bullet-point .bullet {
+    width: 6px; height: 6px; background: var(--text-muted);
+    border-radius: 50%; margin-top: 0.5rem; flex-shrink: 0;
+}
+.accordion-bullet-point:hover .bullet { background: var(--text-primary); }
+
+.view-more-btn {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0.75rem; width: fit-content; margin: 2.5rem auto 0;
+    padding: 0.875rem 2rem; background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08); border-radius: 100px;
+    color: var(--gray-300); font-size: 0.875rem; font-weight: 500;
+    cursor: pointer; transition: all 0.4s var(--ease-out-expo);
+    backdrop-filter: blur(10px); font-family: inherit;
+}
+.view-more-btn i { font-size: 0.75rem; transition: transform 0.4s var(--ease-out-expo); }
+.view-more-btn:hover {
+    background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2);
+    color: var(--white);
+}
+
+.heatmap-section { margin-bottom: var(--section-gap); }
+
+.heatmap-container {
+    position: relative; padding: 0 0 1rem;
+    overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch;
+}
+.heatmap-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 1rem; flex-wrap: wrap; gap: 0.75rem;
+}
+.heatmap-title {
+    font-size: 0.8125rem; font-weight: 500; color: var(--gray-400);
+    letter-spacing: 0.02em;
+}
+
+.heatmap-svg { display: block; }
+
+.month-label {
+    font-family: "Inter", sans-serif; font-size: 11px;
+    fill: var(--text-muted); font-weight: 400;
+}
+.contribution-cell { transition: all 0.1s ease; }
+.contribution-cell:hover { stroke: rgba(255,255,255,0.2); stroke-width: 1; }
+
+.heatmap-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 0.75rem; font-size: 0.75rem; color: var(--text-muted);
+}
+.contribution-summary { font-size: 0.75rem; color: var(--gray-400); }
+.contribution-summary a {
+    color: var(--text-primary); text-decoration: none;
+    border-bottom: 1px solid var(--border-subtle); transition: border-color 0.2s ease;
+}
+.contribution-summary a:hover { border-bottom-color: var(--text-primary); opacity: 1; }
+
+.heatmap-legend { display: flex; align-items: center; gap: 0.375rem; font-size: 0.6875rem; }
+.heatmap-legend-label { color: var(--text-muted); }
+.heatmap-legend-colors { display: flex; gap: 2px; margin: 0 0.25rem; }
+.heatmap-legend-cell { width: 10px; height: 10px; border-radius: 2px; }
+
+.contact-section { margin-bottom: var(--section-gap); }
+.contact-card {
+    border: 1px dotted rgba(255,255,255,0.15); border-radius: 20px;
+    padding: 3rem 1.5rem; text-align: center; backdrop-filter: blur(10px);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+.contact-card:hover { border-color: rgba(255,255,255,0.25); }
+
+.contact-text {
+    font-size: clamp(1.25rem, 4vw, 1.8rem); font-weight: 700;
+    color: var(--gray-100); margin-bottom: 2rem; letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+.book-btn {
+    background: var(--gray-100); color: var(--black); border: none;
+    padding: 1rem 2rem; border-radius: 12px; font-size: 1rem; font-weight: 600;
+    cursor: pointer; display: inline-flex; align-items: center; gap: 0.75rem;
+    transition: all 0.3s ease; text-decoration: none; font-family: inherit;
+}
+.book-btn:hover { opacity: 0.9; color: var(--black); }
+.book-btn i { font-size: 0.875rem; }
+
+.footer {
+    margin-top: 0; padding: 1rem 0; border-top: 1px solid var(--border-subtle);
+    text-align: center;
+}
+.footer-text {
+    font-size: 0.8rem; color: var(--gray-400); letter-spacing: 0.02em;
+}
+
+.copy-toast {
+    position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(20px);
+    background: var(--white); color: var(--black); padding: 0.75rem 1.5rem;
+    border-radius: 8px; font-size: 0.8125rem; font-weight: 600;
+    opacity: 0; transition: all 0.3s var(--ease-out-expo); z-index: 9999;
+    pointer-events: none; box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+.copy-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition: none !important; animation: none !important;
+    }
+    .tile-wrapper, .current-item, .section-header {
+        opacity: 1 !important; transform: none !important;
+    }
+    .hero-badge, .title-line, .hero-subtitle, .hero-tagline {
+        opacity: 1 !important; transform: none !important; animation: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-wrapper { padding: 3rem 1.25rem 2rem; }
+
+    .bento-grid { gap: 0.5rem; }
+    .tile--primary, .tile--xl, .tile--lg, .tile--md { grid-column: span 12; }
+    .tile--sm { grid-column: span 6; }
+
+    .accordion-header { padding: 1.25rem 0; gap: 1rem; }
+    .accordion-meta { text-align: left; margin-right: 0; }
+    .accordion-date { font-size: 0.75rem; opacity: 0.8; }
+    .accordion-inner { padding-left: 0; }
+
+    .hero-ghost { margin-top: 4px; width: 51px; height: 42px; }
+    .pixel-ghost { --ghost-scale: 0.15; }
+
+    .heatmap-footer { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+    .heatmap-legend { align-self: flex-end; }
+
+    .footer { margin-top: 1rem; padding: 1.5rem 1rem 0; }
+}
+
+@media (max-width: 480px) {
+    .tile, .tile--primary .tile, .tile--sm .tile {
+        padding: 1rem; min-height: 50px; border-radius: 12px;
+        justify-content: center; gap: 0;
+    }
+    .tile span, .copy-btn { display: none; }
+
+    .tile--primary, .tile--md { grid-column: span 6; }
+    .tile--sm { grid-column: span 4; }
+
+    .tile { border-radius: 12px; }
+
+    .current-item { flex-wrap: wrap; }
+    .current-meta { width: 100%; margin-top: 0.5rem; }
+
+    .accordion-logo { width: 38px; height: 38px; }
+    .accordion-chevron-box { width: 28px; height: 28px; }
+
+    .contact-card { padding: 2rem 1rem; }
+    .book-btn { padding: 0.875rem 1.5rem; font-size: 0.9rem; }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="vignette"></div>
+
+    <div class="content-wrapper">
+
+        <section class="hero">
+            <div class="hero-top">
+                <div>
+                    <div class="hero-badge">
+                        <span class="status-dot"></span>
+                        Available for Work
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="title-line">Anzar Ali</span><br>
+                        <span class="title-line" style="animation-delay: 0.4s;">Khan<span class="title-dot">.</span></span>
+                    </h1>
+                    <p class="hero-subtitle">Software Engineer & QA Automation</p>
+                    <p class="hero-tagline">// building resilient systems & bulletproof tests</p>
+                </div>
+                <div class="hero-ghost">
+                    <pre class="pixel-ghost">
+  ████████
+ ██░░░░░░██
+██░░▓▓░░▓▓██
+██░░░░░░░░██
+██▓▓▓▓▓▓▓▓██
+██░░██░░██░░██
+ ████  ████
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <span class="section-title">Links</span>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="bento-grid">
+                <div class="tile-wrapper tile--primary">
+                    <a href="https://github.com/khananzarali" target="_blank" rel="noopener noreferrer" class="tile">
+                        <i class="fa-brands fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <button class="copy-btn" data-copy="https://github.com/khananzarali" aria-label="Copy link">
+                        <i class="fa-regular fa-copy"></i>
+                    </button>
+                </div>
+
+                <div class="tile-wrapper tile--primary">
+                    <a href="https://www.linkedin.com/in/anzaralikhan/" target="_blank" rel="noopener noreferrer" class="tile">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <button class="copy-btn" data-copy="https://www.linkedin.com/in/anzaralikhan/" aria-label="Copy link">
+                        <i class="fa-regular fa-copy"></i>
+                    </button>
+                </div>
+
+                <div class="tile-wrapper tile--md">
+                    <a href="mailto:khananzarali@outlook.com" class="tile">
+                        <i class="fa-regular fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                    <button class="copy-btn" data-copy="khananzarali@outlook.com" aria-label="Copy email">
+                        <i class="fa-regular fa-copy"></i>
+                    </button>
+                </div>
+
+                <div class="tile-wrapper tile--md">
+                    <a href="cv.pdf" download class="tile">
+                        <i class="fa-regular fa-file-lines"></i>
+                        <span>Resume</span>
+                    </a>
+                    <button class="copy-btn" data-copy="resume" aria-label="Download resume">
+                        <i class="fa-solid fa-download"></i>
+                    </button>
+                </div>
+
+
+            </div>
+        </section>
+
+
+        <section class="section">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <span class="section-title">Experience</span>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="accordion-container">
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <div class="accordion-logo">Q</div>
+                        <div class="accordion-info">
+                            <div class="accordion-title-row">
+                                <span class="accordion-title">Qalitus</span>
+                            </div>
+                            <span class="accordion-subtitle">QA Manual & Automation Engineer</span>
+                        </div>
+                        <div class="accordion-meta">
+                            <span class="accordion-date">Mar 2025 — Apr 2026</span>
+                        </div>
+                        <div class="accordion-chevron-box">
+                            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content" style="height: 0; overflow: hidden;">
+                        <div class="accordion-inner">
+                            <div class="accordion-bullet-point">
+                                <div class="bullet"></div>
+                                <span>Designed and implemented comprehensive automated test suites using Playwright.</span>
+                            </div>
+                            <div class="accordion-bullet-point">
+                                <div class="bullet"></div>
+                                <span>Executed manual regression testing and identified critical bugs before production releases.</span>
+                            </div>
+                            <div class="accordion-bullet-point">
+                                <div class="bullet"></div>
+                                <span>Collaborated with developers to establish robust CI/CD testing pipelines.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <span class="section-title">Projects</span>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="accordion-container" id="projects-accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <div class="accordion-logo"><i class="fa-solid fa-pen-nib" style="font-size: 0.9rem;"></i></div>
+                        <div class="accordion-info">
+                            <div class="accordion-title-row">
+                                <span class="accordion-title">Author Platform</span>
+                                <div class="accordion-links">
+                                    <a href="https://authorwebsiteanzar.netlify.app/" target="_blank" class="accordion-link-icon" title="View Project"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                </div>
+                            </div>
+                            <span class="accordion-subtitle">Content management & publishing system</span>
+                        </div>
+                        <div class="accordion-meta">
+                            <span class="accordion-date">2025</span>
+                        </div>
+                        <div class="accordion-chevron-box">
+                            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content" style="height: 0; overflow: hidden;">
+                        <div class="accordion-inner">
+                            <div class="accordion-bullet-point">
+                                <div class="bullet"></div>
+                                <span>Centralized author management system automating publishing workflows with secure JWT authentication and role-based access control.</span>
+                            </div>
+                            <div class="accordion-bullet-point">
+                                <div class="bullet"></div>
+                                <span>Built with Node.js, Express, PostgreSQL, React. Robust query optimization for complex content hierarchies.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <span class="section-title">Education</span>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="current-list">
+                <div class="current-item">
+                    <div class="current-bullet"></div>
+                    <div class="current-content">
+                        <div class="current-title">B.Tech Computer Science</div>
+                        <div class="current-description">Lovely Professional University</div>
+                    </div>
+                    <span class="current-meta">2022 — 2026</span>
+                </div>
+                <div class="current-item">
+                    <div class="current-bullet"></div>
+                    <div class="current-content">
+                        <div class="current-title">Claude AI Prompt Engineering</div>
+                        <div class="current-description">Certification — Anthropic</div>
+                    </div>
+                    <span class="current-meta">Cert</span>
+                </div>
+                <div class="current-item">
+                    <div class="current-bullet"></div>
+                    <div class="current-content">
+                        <div class="current-title">Data Structures & Algorithms</div>
+                        <div class="current-description">Certification — CipherSchools</div>
+                    </div>
+                    <span class="current-meta">Cert</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <span class="section-title">Currently</span>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="current-list">
+                <div class="current-item">
+                    <div class="current-bullet"></div>
+                    <div class="current-content">
+                        <div class="current-title">Building an E-Commerce Platform</div>
+                        <div class="current-description">Full-stack development using the PREN stack (PostgreSQL, React, Express, Node.js).</div>
+                    </div>
+                    <span class="current-meta">Ongoing</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact-section">
+            <div class="contact-card">
+                <p class="contact-text">Let's build something<br>together.</p>
+                <a href="mailto:khananzarali@outlook.com" class="book-btn">
+                    Get in Touch <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    const revealObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.section-header').forEach(el => revealObserver.observe(el));
+
+    document.querySelectorAll('.tile-wrapper').forEach(el => revealObserver.observe(el));
+
+    document.querySelectorAll('.current-item').forEach((el, i) => {
+        el.style.transitionDelay = `${i * 0.08}s`;
+        revealObserver.observe(el);
+    });
+
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', (e) => {
+
+            if (e.target.closest('.accordion-link-icon')) return;
+
+            const item = header.closest('.accordion-item');
+            const content = item.querySelector('.accordion-content');
+            const icon = header.querySelector('.accordion-icon');
+            const isOpen = header.getAttribute('aria-expanded') === 'true';
+
+            if (isOpen) {
+
+                content.style.height = content.scrollHeight + 'px';
+                requestAnimationFrame(() => {
+                    content.style.height = '0';
+                });
+                header.setAttribute('aria-expanded', 'false');
+                icon.classList.remove('rotated');
+            } else {
+
+                const container = item.closest('.accordion-container');
+                container.querySelectorAll('.accordion-item').forEach(other => {
+                    if (other !== item) {
+                        const otherContent = other.querySelector('.accordion-content');
+                        const otherIcon = other.querySelector('.accordion-icon');
+                        const otherHeader = other.querySelector('.accordion-header');
+                        if (otherHeader.getAttribute('aria-expanded') === 'true') {
+                            otherContent.style.height = otherContent.scrollHeight + 'px';
+                            requestAnimationFrame(() => {
+                                otherContent.style.height = '0';
+                            });
+                            otherHeader.setAttribute('aria-expanded', 'false');
+                            otherIcon.classList.remove('rotated');
+                        }
+                    }
+                });
+
+                content.style.height = content.scrollHeight + 'px';
+                header.setAttribute('aria-expanded', 'true');
+                icon.classList.add('rotated');
+
+                content.addEventListener('transitionend', function handler() {
+                    if (header.getAttribute('aria-expanded') === 'true') {
+                        content.style.height = 'auto';
+                    }
+                    content.removeEventListener('transitionend', handler);
+                });
+            }
+        });
+    });
+
+    const viewMoreBtn = document.getElementById('view-more-projects');
+    let projectsExpanded = false;
+
+    if (viewMoreBtn) {
+        viewMoreBtn.addEventListener('click', () => {
+            const extras = document.querySelectorAll('.extra-project');
+            projectsExpanded = !projectsExpanded;
+
+            extras.forEach((item, i) => {
+                if (projectsExpanded) {
+                    item.style.display = '';
+
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, i * 80);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+
+            viewMoreBtn.innerHTML = projectsExpanded
+                ? 'Show Less <i class="fa-solid fa-chevron-up"></i>'
+                : 'View More <i class="fa-solid fa-chevron-down"></i>';
+        });
+
+        document.querySelectorAll('.extra-project').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+        });
+    }
+
+    const toast = document.createElement('div');
+    toast.className = 'copy-toast';
+    document.body.appendChild(toast);
+
+    let toastTimeout;
+    function showToast(message) {
+        toast.textContent = message;
+        toast.classList.add('show');
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2000);
+    }
+
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+            const value = btn.dataset.copy;
+            if (!value) return;
+
+            if (value === 'resume') {
+                const link = document.createElement('a');
+                link.href = 'cv.pdf';
+                link.download = 'Anzar_Ali_Khan_Resume.pdf';
+                link.click();
+                showToast('Downloading resume...');
+                return;
+            }
+
+            try {
+                await navigator.clipboard.writeText(value);
+                showToast('Copied to clipboard!');
+
+                const icon = btn.querySelector('i');
+                icon.className = 'fa-solid fa-check';
+                setTimeout(() => {
+                    icon.className = 'fa-regular fa-copy';
+                }, 1500);
+            } catch (err) {
+
+                const textarea = document.createElement('textarea');
+                textarea.value = value;
+                textarea.style.position = 'fixed';
+                textarea.style.opacity = '0';
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                showToast('Copied to clipboard!');
+            }
+        });
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+
+            document.querySelectorAll('.accordion-header[aria-expanded="true"]').forEach(header => {
+                header.click();
+            });
+        }
+    });
+});
+
+    </script>
+</body>
+</html>
